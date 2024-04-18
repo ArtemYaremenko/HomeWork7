@@ -6,12 +6,10 @@ public class Main {
         int amountOfSavings = 0;
         int dreamMoney = 2_459_000;
         int deposit = 15_000;
-        float interestOnDeposit = 0.01f; // ставка 1% в месяц на остаток
         int monthNumber = 0;
 
         while (amountOfSavings <= dreamMoney) {
             amountOfSavings += deposit;
-            amountOfSavings += (int)(amountOfSavings * interestOnDeposit);
             monthNumber++;
             System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", monthNumber, amountOfSavings);
         }
@@ -21,14 +19,10 @@ public class Main {
         int number = 1;
         while (number <= 10) {
             System.out.printf("%d ", number);
-            if (number < 10) {
-                number++;
-            }
-            else {
-                System.out.println();
-                break;
-            }
+            number++;
         }
+        number--;
+        System.out.println();
         for (; number > 0; number--) {
             System.out.printf("%d ", number);
         }
@@ -36,11 +30,11 @@ public class Main {
         //Task 3
         System.out.println("\n\nTask 3");
         int populationOfCountry = 12_000_000;
-        float birthRatePerThousand = 0.017f;
+        float birthRatePerThousand = 1.017f;
         float deathRatePerThousand = 0.008f;
-        int year = 0;
+        int year = 1;
         for (; year <= 10; year++) {
-            populationOfCountry += (int) ((populationOfCountry * birthRatePerThousand) - (populationOfCountry * deathRatePerThousand));
+            populationOfCountry *= (birthRatePerThousand - deathRatePerThousand) ;
             System.out.printf("Год %d, численность населения составляет %d.\n", year, populationOfCountry);
         }
 
@@ -49,9 +43,9 @@ public class Main {
         int vasyaDeposit = 15000;
         int vasyaDreamCash = 12_000_000;
         int numberMonth = 0;
-        float interestOfVasyaDeposit = 0.07f;
+        float interestOfVasyaDeposit = 1.07f;
         while (vasyaDeposit <= vasyaDreamCash) {
-            vasyaDeposit += (int)(vasyaDeposit * interestOfVasyaDeposit);
+            vasyaDeposit *= interestOfVasyaDeposit ;
             numberMonth++;
             System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", numberMonth, vasyaDeposit);
         }
@@ -61,9 +55,9 @@ public class Main {
         int vasyaDepositNew = 15000;
         int vasyaDreamCashNew = 12_000_000;
         int numberMonthNew = 0;
-        float interestOfVasyaDepositNew = 0.07f;
+        float interestOfVasyaDepositNew = 1.07f;
         while (vasyaDepositNew <= vasyaDreamCashNew) {
-            vasyaDepositNew += (int)(vasyaDepositNew * interestOfVasyaDepositNew);
+            vasyaDepositNew *= interestOfVasyaDepositNew;
             numberMonthNew++;
             if (numberMonthNew % 6 == 0){
             System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", numberMonthNew, vasyaDepositNew);
@@ -74,9 +68,9 @@ public class Main {
         System.out.println("\nTask 6");
         int vasyaDepositNine = 15000;
         int numberMonthNine = 1;
-        float interestOfVasyaDepositNine = 0.07f;
+        float interestOfVasyaDepositNine = 1.07f;
         for (; numberMonthNine <= 12 * 9; numberMonthNine++) {
-            vasyaDepositNine += (int)(vasyaDepositNine * interestOfVasyaDepositNine);
+            vasyaDepositNine *= interestOfVasyaDepositNine;
             if (numberMonthNine % 6 == 0) {
                 System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", numberMonthNine, vasyaDepositNine);
             }
